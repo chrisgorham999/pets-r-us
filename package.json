@@ -1,0 +1,20 @@
+{
+  "name": "pets-r-us",
+  "version": "1.0.0",
+  "description": "web-340 pets-r-us project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisgorham999/pets-r-us.git"
+  },
+  "author": "Chris Gorham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisgorham999/pets-r-us/issues"
+  },
+  "homepage": "https://github.com/chrisgorham999/pets-r-us#readme"
+}
