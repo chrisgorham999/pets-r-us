@@ -32,42 +32,42 @@ app.get('/', (req, res) => {
 app.get('/grooming', (req, res) => {
     res.render('grooming', {
       title: "Pets-R-Us: Grooming",
-      pageTitle: "Grooming Services",
+      pageTitle: "Pets-R-Us: Grooming Services",
     });
   });
   
   app.get("/boarding", (req, res) => {
-    res.render("boarding", {
+    res.render('boarding', {
       title: "Pets-R-Us: Boarding",
-      pageTitle: "Pets-R-Us Boarding",
+      pageTitle: "Pets-R-Us: Boarding",
     });
   });
   
   app.get("/training", (req, res) => {
-    res.render("training", {
+    res.render('training', {
       title: "Pets-R-Us: Training",
-      pageTitle: "Pets-R-Us Training",
+      pageTitle: "Pets-R-Us: Training",
     });
   });
   
   app.get("/register", (req, res) => {
-    res.render("register", {
+    res.render('register', {
       title: "Pets-R-Us: Register",
-      pageTitle: "Pets-R-Us Register",
+      pageTitle: "Pets-R-Us: Register",
     });
   });
   
-  app.get("/customers", (req, res) => {
-    res.render("customers", {
+  app.get('/customers', (req, res) => {
+    res.render('customers', {
       title: "Pets-R-Us: Customer List",
-      pageTitle: "Pets-R-Us Customer List",
+      pageTitle: "Pets-R-Us: Customer List",
     });
   });
   
   app.get("/appointment", (req, res) => {
     res.render("appointment", {
       title: "Pets-R-Us: My Appointments",
-      pageTitle: "Pets-R-Us My Appointments",
+      pageTitle: "Pets-R-Us: My Appointments",
     });
   });
 
