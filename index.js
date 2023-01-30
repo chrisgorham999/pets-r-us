@@ -1,3 +1,13 @@
+/*
+======================================
+; Title: index.js 
+; Author: Chris Gorham
+; Date: 28 Jan 2023
+; Description: This code sets up the Pets-R-Us site views, apps, and renders
+; Sources Used: N/A
+;=====================================
+*/
+
 "use-strict";
 
 // import
@@ -21,7 +31,7 @@ app.use("/site", express.static(path.join(__dirname, "public/stylesheets")));
 // holds server port value
 const PORT = process.env.PORT || 3000;
 
-// renders homepage
+// renders all the different pages
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'Pets-R-Us',
@@ -71,5 +81,5 @@ app.get('/grooming', (req, res) => {
     });
   });
 
-//Listen on port 3000
+//Listens on port 3000
 app.listen(PORT, () => console.info(`Listening on port ${PORT}`));

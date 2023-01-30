@@ -13,13 +13,13 @@
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  /* Style the top navigation bar */
+  /* Styles the top navigation bar */
   .topnav {
     overflow: hidden;
     background-color: #333;
   }
   
-  /* Style the topnav links */
+  /* Styles the topnav links */
   .topnav a {
     float: left;
     display: block;
@@ -48,12 +48,14 @@
     text-align: center;
   }
 
+  /* Styles contact form container */
   .contact-container {
     border-radius:5px;
     padding: 20px;
     width: 33%;
   }
 
+  /* Styles input text box on the contact form */
   input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -65,6 +67,7 @@
     resize: vertical;
   }
   
+  /* Styles submit button on the contact form */
   input[type=submit] {
     background-color: #04AA6D;
     color: white;
@@ -74,6 +77,7 @@
     cursor: pointer;
   }
   
+  /* Styles submit button on hover on the contact form */
   input[type=submit]:hover {
     background-color: #45a049;
   }
