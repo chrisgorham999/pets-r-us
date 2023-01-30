@@ -22,29 +22,39 @@
     
   <body>
 
-    <div class="topnav">
-        <a href="#locations">Locations</a>
-        <a href="#hours">Hours</a>
-        <a href="boarding.ejs">Boarding</a>
-        <a href="grooming">Grooming</a>
-        <a href="training">Training</a>
-        <a href="book">Book an Appointment</a>
-        <a href="myappointments">My Appointments</a>
-        <a href="#dotw">Dog of the Week</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="registration">Registration</a>
-        <a href="customerlist">Customer List</a>
-        <a href="#contact">Contact Us</a>
-      </div>
+    
+        <%- include('header.ejs') %>
+      
     
     <div class="content">
-      <h2>Dog Days</h2>
+      <h2>Pets-R-Us</h2>
       <p>The #1 Pet Store on the Eastern Shore</p>
+      <br>
+      <p>
+        At Pets-R-Us we offer services that include bathing, brushing, nail trimming, ear cleaning, and haircuts. Our services aim to keep pets clean, healthy, and comfortable, and can also enhance their appearance. We offer grooming services on-site, performed by trained professionals. It is important to choose a grooming service that is safe, gentle, and suitable for the specific breed and individual needs of each pet and Pets-R-Us is 4 star rated with over 1,000 reviews online.
+      </p>
+      <img src="/images/grooming.jpg" width="30%" height="30%">
+      <br>
+      <h1>Individual Grooming Services Offered:</h1>
+      <p>
+        <ul>
+            <li>Haircuts ($59.99)</li>
+            <li>Bathing ($29.99)</li>
+            <li>Nail Trimming ($9.99)</li>
+            <li>Ear Cleaning ($9.99)</li>
+            <li>Hair Brushing ($19.99)</li>
+        </ul>
+      </p>
+      <h1>Grooming Packages Offered:</h1>
+      <p>
+        <ul>
+            <li>Starter Package ($49.99) - (includes bath, nail trimming, ear cleaning, and hair brushing</li>
+            <li>Deluxe Package ($99.99) - (includes haircut, bath, nail trimming, ear cleaning, and hair brushing</li>
+        </ul>
+      </p>
     </div>
     
-    <div class="footer">
-        <p>Check us out on Instagram and Twitter!</p>
-    </div>
+    <%- include('footer.ejs') %>
  
   
   </body>

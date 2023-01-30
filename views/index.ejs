@@ -22,34 +22,27 @@
     
   <body>
 
-    <div class="topnav">
-      <a href="#locations">Locations</a>
-      <a href="#hours">Hours</a>
-      <a href="boarding">Boarding</a>
-      <a href="index">Home</a>
-      <a href="#locations">Locations</a>
-      <a href="#hours">Hours</a>
-      <a href="boarding.ejs">Boarding</a>
-      <a href="grooming">Grooming</a>
-      <a href="training">Training</a>
-      <a href="book">Book an Appointment</a>
-      <a href="myappointments">My Appointments</a>
-      <a href="#dotw">Dog of the Week</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="registration">Registration</a>
-      <a href="customerlist">Customer List</a>
-      <a href="#contact">Contact Us</a>
-    </div>
+    <%- include('header.ejs') %>
     
     <div class="content">
       <h2>Pets-R-Us</h2>
-      <p>The #1 Pet Store on the Eastern Shore</p>
-      <p></p>
+      <p>The #1 Pet Store on the Eastern Shore since 2010</p>
+      <p>
+        Pets-R-Us is a one-stop pet store that offers a wide variety of pet supplies, including food, toys, and accessories, for all types of pets. With a knowledgeable and friendly staff, we strive to provide customers with the best possible shopping experience. We aim to make pet ownership easier and more enjoyable for everyone by offering high-quality products at competitive prices. Whether you are looking for a new pet or just need to stock up on supplies, Pets-R-Us is your go-to destination for all things pet-related.
+      </p>
+      <p>We also offer the following services:
+        <ul>
+          <li>Grooming</li>
+          <li>Training</li>
+          <li>Boarding</li>
+        </ul>
+        ..and more
+      </p>
       <br>
       <img src="./images/logo.png" width="30%" height="30%">
       <hr>
       <a name="locations"></a>
-        <p><b>Locations:</b><br>
+        <p><h1>Locations:</h1>
           The North Salisbury Location<br>
           1510 E. Salisbury Blvd<br>
           Salisbury MD 21801<br>
@@ -61,13 +54,14 @@
 
       <a name="hours"></a>
         <p>
-          <b>Hours:</b><br>
+          <h1>Hours:</h1>
           All locations are open from:<br> 
           Mon - Sat 9AM to 9PM<br>
           Sun 10AM to 6PM<br>
         </p>
 
       <a name="dotw">
+        <h1>Dog of the Week:</h1><hr>
         <b>Dog of the Week for January 30, 2023:</b><br>
         <img src="./images/dotw.jpeg" width="25%" height="25%"><br>
         Name: Lincoln<br>
@@ -77,11 +71,42 @@
 
       </a>
       
+      <a name="testimonials">
+        <h1>Testimonials:</h1>
+        <p>Barbara from Fruitland:<br>
+          <i>"I've been going to Pets-R-Us for over 10 years and I love their service. I wouldn't trust anyone else with my dog."</i>
+        </p>
+        <p>Larry from Salisbury:<br>
+        <i>"Their online booking for appointments is a real game changer and so convenient."</i>
+        </p>
+      </a>
+
+      <a name="contact">
+        <h1>Contact Us:</h1>
+        <div class="contact-container">
+          <form action="action.php">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Your email address..">
+        
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        
+            <input type="submit" value="Submit">
+          </form></a>
+        </div>
+        
+
+      
+
     </div>
     
-    <div class="footer">
-      <p>Check us out on Instagram and Twitter!</p>
-    </div>
+    <%- include('footer.ejs') %>
 
   
   </body>
