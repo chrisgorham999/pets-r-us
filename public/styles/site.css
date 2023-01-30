@@ -1,14 +1,14 @@
-<<<<<<< HEAD
-body {
-=======
-  * {
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
+/*
+======================================
+; Title: site.css 
+; Author: Chris Gorham
+; Date: 28 Jan 2023
+; Description: This code styles the pets-r-us website
+; Sources Used: N/A
+;=====================================
+*/
   
   body {
->>>>>>> 79c4552196acd0ed547e7d2eef2bb45613f87587
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -39,18 +39,11 @@ body {
   .content {
     background-color: #ddd;
     padding: 10px;
-<<<<<<< HEAD
-=======
-    height: 200px;
->>>>>>> 79c4552196acd0ed547e7d2eef2bb45613f87587
   }
   
   /* Style the footer */
   .footer {
     background-color: #f1f1f1;
     padding: 10px;
-<<<<<<< HEAD
     text-align: center;
-=======
->>>>>>> 79c4552196acd0ed547e7d2eef2bb45613f87587
   }
