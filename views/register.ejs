@@ -1,0 +1,67 @@
+<!----
+======================================
+; Title: register.ejs 
+; Author: Chris Gorham
+; Date: 10 Feb 2023
+; Description: This code has the code for the pets-r-us registration page
+; Sources Used: N/A
+;=====================================
+---->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Register: Pets-R-Us: The #1 Pet Store on the Eastern Shore</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--The style sheet all pages use-->
+        <link rel="stylesheet" href="styles/site.css">
+        <!--The Google font all pages use-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+    </head>
+    
+  <body>
+
+    <!--Calls the header (navbar) file-->
+    <%- include('_header.ejs') %>
+    
+    <div class="content">
+      <h2>Pets-R-Us Register Page</h2>
+
+        <div class="form">
+            <form action="/customers" method="post">
+                <div class="form-field">
+                    <label for="customerId">Customer ID:</label><br>
+                    <input class="input" type="text" name="customerId" id="customerId" required autofocus>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email:</label><br>
+                    <input class="input" type="text" name="email" id="email" required autofocus>
+                </div>
+
+                <div class="form-field">
+                    <input type="submit" value="Register Customer" class="btn btn-primary full-width">
+                </div>
+            </form>
+        </div>
+        
+
+      
+
+    </div>
+    
+    <!--Calls the footer file-->
+    <%- include('_footer.ejs') %>
+
+  
+  </body>
+  </html>
+  
+    
+    </body>
+
+</html>
