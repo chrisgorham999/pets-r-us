@@ -97,3 +97,23 @@
   .italics {
     font-style: italic;
   }
+
+  .table {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .table td {
+    padding: 10px;
+    text-align: center;
+    background-color: #000;
+    color: #FFF;
+  }
+
+  .table tr {
+    padding: 1px;
+  }
+
+  .table td:hover {
+    background-color: #757575;
+  }

@@ -81,17 +81,17 @@ app.get('/grooming', (req, res) => {
     });
   });
   
-  app.get('/customerList', (req, res) => {
-    res.render('customerList', {
-      title: "Pets-R-Us: Customer List",
-      pageTitle: "Pets-R-Us: Customer List",
-    });
-  });
-  
   app.get('/appointment', (req, res) => {
     res.render('appointment', {
       title: "Pets-R-Us: My Appointments",
       pageTitle: "Pets-R-Us: My Appointments",
+    });
+  });
+
+  app.get('/customerlist', (req, res) => {
+    res.render('customerlist', {
+      title: "Pets-R-Us: Customer List",
+      pageTitle: "Pets-R-Us: Customer List",
     });
   });
 
@@ -116,6 +116,21 @@ app.post('/customers', (req, res, next) => {
               title: 'Pets-R-Us'
           })
       }
+  })
+})
+
+app.get('/customers', (req, res) => {
+  Customer.find({}, function(err, customer) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.render('customerlist', {
+        title: "Pets-R-Us: Customer List",
+        pageTitle: "Pets-R-Us: Customer List",
+        customer: customer
+      })
+    }
   })
 })
 

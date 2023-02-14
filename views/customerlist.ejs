@@ -1,0 +1,73 @@
+<!----
+======================================
+; Title: customerlist.ejs 
+; Author: Chris Gorham
+; Date: 13 Feb 2023
+; Description: This code has the code for the pets-r-us customer list page
+; Sources Used: N/A
+;=====================================
+---->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Customer List: Pets-R-Us: The #1 Pet Store on the Eastern Shore</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--The style sheet all pages use-->
+        <link rel="stylesheet" href="styles/site.css">
+        <!--The Google font all pages use-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+    </head>
+    
+  <body>
+
+    <!--Calls the header (navbar) file-->
+    <%- include('partials/_header.ejs') %>
+    
+    <div class="content">
+        <% if(customer.length > 0) { %>
+            <table class="table">
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Email</th>
+                </tr>
+                <tbody>
+                <% customer.forEach(function(customer) { %>
+                <tr>
+                    <td>
+                        <%= customer.customerId %>
+                    </td>
+                    <td>
+                        <%= customer.email %>
+                    </td>
+                    <td>
+                        <a href="#">DELETE</a>
+                    </td>
+                </tr>
+                <% }) %>
+                </tbody>
+            </table>
+            <% } else { %>
+            <h3>Fruits have not been added to the MongoDB database.  Try adding some!</h3>
+            <% } %>
+        
+
+      
+
+    </div>
+    
+    <!--Calls the footer file-->
+    <%- include('partials/_footer.ejs') %>
+
+  
+  </body>
+  </html>
+  
+    
+    </body>
+
+</html>
