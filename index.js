@@ -95,7 +95,7 @@ app.get('/grooming', (req, res) => {
     });
   });
 
-// post route
+// post route for the customer registration process
 app.post('/customers', (req, res, next) => {
   console.log(req.body);
   console.log(req.body.customerId);
@@ -119,6 +119,7 @@ app.post('/customers', (req, res, next) => {
   })
 })
 
+// get route for the customer list display process
 app.get('/customers', (req, res) => {
   Customer.find({}, function(err, customer) {
     if (err) {

@@ -28,7 +28,12 @@
     <!--Calls the header (navbar) file-->
     <%- include('partials/_header.ejs') %>
     
+    
     <div class="content">
+        <h1>Customer List</h1>
+        <p>
+            Below is a list of all registered customers and their emails.
+        </p>
         <% if(customer.length > 0) { %>
             <table class="table">
                 <tr>
@@ -44,15 +49,12 @@
                     <td>
                         <%= customer.email %>
                     </td>
-                    <td>
-                        <a href="#">DELETE</a>
-                    </td>
                 </tr>
                 <% }) %>
                 </tbody>
             </table>
             <% } else { %>
-            <h3>Fruits have not been added to the MongoDB database.  Try adding some!</h3>
+            <h3>Zero customers have been added to the MongoDB customer database. </h3>
             <% } %>
         
 
