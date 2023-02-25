@@ -13,8 +13,12 @@
 // import
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const mongoose = require('mongoose');
+
 const Customer = require('./models/customer');
+const appointment = require('./models/appointment');
+
 
 // express app variable
 const app = express();
@@ -80,13 +84,6 @@ app.get('/grooming', (req, res) => {
       pageTitle: "Pets-R-Us: Register",
     });
   });
-  
-  app.get('/appointment', (req, res) => {
-    res.render('appointment', {
-      title: "Pets-R-Us: My Appointments",
-      pageTitle: "Pets-R-Us: My Appointments",
-    });
-  });
 
   app.get('/customerlist', (req, res) => {
     res.render('customerlist', {
@@ -132,6 +129,42 @@ app.get('/customers', (req, res) => {
         customer: customer
       })
     }
+  })
+})
+
+// renders the booking.ejs page and pulls the services for the form from services.json
+app.get('/booking', (req, res) => {
+  let jsonFile = fs.readFileSync('./public/data/services.json');
+  let services = JSON.parse(jsonFile);
+
+  console.log(services);
+
+  res.render('booking', {
+      title: 'Pets-R-Us: Appointment Booking',
+      pageTitle: 'Pets-R-Us: Appointment Booking',
+      services: services
+  })
+})
+
+// does the POST action for the booking process when the user clicks on the Book Appointment button
+app.post('/booking', (req, res, next) => {
+  const newAppt = new appointment({
+      userName: req.body.userName,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      service: req.body.service
+  })
+  // create a new appointment and log an error if there is one - if not, render index page
+  appointment.create(newAppt, function(err, appointment) {
+      if (err) {
+          console.log(err);
+          next(err);
+      } else {
+          res.render('index', {
+              title: 'Pets-R-Us'
+          })
+      }
   })
 })
 

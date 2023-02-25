@@ -1,0 +1,87 @@
+<!----
+======================================
+; Title: booking.ejs 
+; Author: Chris Gorham
+; Date: 25 Feb 2023
+; Description: This code has the code for the pets-r-us appointment booking page
+; Sources Used: N/A
+;=====================================
+---->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Register: Pets-R-Us: The #1 Pet Store on the Eastern Shore</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--The style sheet all pages use-->
+        <link rel="stylesheet" href="styles/site.css">
+        <!--The Google font all pages use-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+    </head>
+    
+  <body>
+
+    <!--Calls the header (navbar) file-->
+    <%- include('partials/_header.ejs') %>
+
+<section>
+  <h1 class="center-text"> Welcome to the Pets-R-Us Appointment Booking Page!</h1>
+
+  <div class="contact-container">
+    <div class="card-title"><%= pageTitle %><br><br><p>Here you can book an appointment for our grooming, boarding, or training services.</p><br><br> </div>
+      <div class="form">
+        <form action="/booking" method="post">
+
+          <div class="form-field">
+                <label for="usertName">User Name</label><br />
+                <input class="input" type="text" name="userName" id="userName" required autofocus>
+          </div>
+
+          <div class="form-field">
+            <label for="firstName">First Name</label><br />
+            <input class="input" type="text" name="firstName" id="firstName" required autofocus>
+          </div>
+
+          <div class="form-field">
+            <label for="lastName">Last Name</label><br />
+            <input class="input" type="text" name="lastName" id="lastName" required autofocus>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label><br />
+            <input class="input" type="text" name="email" id="email" required autofocus>
+          </div>
+
+          <div class="form-field">
+            <label for="service">Service Option</label><br />
+            <select name="service" id="service" class="drop-down-menu full-width" required>
+              <% services.forEach((service) => { %>
+              <option value="'<%= service.value %>'"><%= service.text %></option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="form-field"><br>
+            <input type="submit" value="Book Appointment" class="btn btn-primary full-width">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<br><br><br><br>
+
+    <!--Calls the footer file-->
+    <%- include('partials/_footer.ejs') %>
+
+  
+</body>
+</html>
+  
