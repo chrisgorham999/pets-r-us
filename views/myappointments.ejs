@@ -58,17 +58,22 @@
       
       
       <script>
+        // establish the on click function for the search button
         document.getElementById('search').onclick = function() {
           const email = document.getElementById('email').value;
+          // fetches the email data from the appointments database on MongoDB using the inputted email address as the search value
           fetch('/api/appointments/' + email)
                   .then(res => res.json())
                   .then(data => {
                     let tableString = `<br><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px; font-weight: lighter">My Appointments</h4><table id="appointments" style="width: 100%;" class="table full-width"><tr><th>First name</th><th>Last name</th><th>Email</th><th>Service</th></tr>`;
-
+                    
+                    // iterate over data and create a row for each appointment that matches
                     for (let appointment of data) {
                       tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>${appointment.service}</td></tr>`;
                     }
+                    // close out the table
                     tableString += `</table>`;
+                    // bind the table data to the appointments div for display
                     document.getElementById('appointments').innerHTML = tableString;
                   });
         }
