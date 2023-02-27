@@ -168,6 +168,25 @@ app.post('/booking', (req, res, next) => {
   })
 })
 
+// does the GET process for the View My Appointments page
+app.get('/myappointments', (req, res) => {
+  res.render('myappointments', {
+      title: 'Pets-R-Us: My Appointments',
+      pageTitle: 'View My Appointments'
+  })
+})
+
+app.get('/api/appointments/:email', async(req, res, next) => {
+  appointment.find({'email': req.params.email}, function(err, appointments) {
+      if (err) {
+          console.log(err);
+          next(err);
+      } else {
+          res.json(appointments);
+      }
+  })
+})
+
 
 //Listens on port 3000
 app.listen(PORT, () => console.info(`Listening on port ${PORT}`));

@@ -1,0 +1,85 @@
+<!----
+======================================
+; Title: myappointments.ejs 
+; Author: Chris Gorham
+; Date: 27 Feb 2023
+; Description: This code has the code for the pets-r-us page where customers can view their booked appointments
+; Sources Used: N/A
+;=====================================
+---->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>My Appointments: Pets-R-Us: The #1 Pet Store on the Eastern Shore</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--The style sheet all pages use-->
+        <link rel="stylesheet" href="styles/site.css">
+        <!--The Google font all pages use-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+    </head>
+    
+  <body>
+
+    <!--Calls the header (navbar) file-->
+    <%- include('partials/_header.ejs') %>
+
+    <section>
+        <br>
+        
+        <div class="contact-container">
+          <h2> Pets-R-Us: My Appointments</h2>
+          <div class="card-title">Welcome to the Pets-R-Us Appointment Lookup Form
+          </div>
+          <p>Type in the email address you used during the customer registration process and you can view appointments that you have booked for any of our services.</p>
+          <div class="card-content">
+            <div class="form full-width">
+      
+              <div class="form-field">
+                <label for="lastName">Email Address:</label><br />
+                <input type="text" class="input" name="email" id="email" required>
+              </div>
+      
+              <div class="form-field">
+                <input type="submit" value="Search" id="search" class="btn btn-primary full-width">
+              </div>
+            </div>
+      
+            <div class="center-div" id="appointments"></div>
+          </div>
+        </div>
+      </section>
+
+      
+      
+      <script>
+        document.getElementById('search').onclick = function() {
+          const email = document.getElementById('email').value;
+          fetch('/api/appointments/' + email)
+                  .then(res => res.json())
+                  .then(data => {
+                    let tableString = `<br><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px; font-weight: lighter">My Appointments</h4><table id="appointments" style="width: 100%;" class="table full-width"><tr><th>First name</th><th>Last name</th><th>Email</th><th>Service</th></tr>`;
+
+                    for (let appointment of data) {
+                      tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>${appointment.service}</td></tr>`;
+                    }
+                    tableString += `</table>`;
+                    document.getElementById('appointments').innerHTML = tableString;
+                  });
+        }
+      </script>
+
+<br><br><br><br>
+
+    <!--Calls the footer file-->
+    <%- include('partials/_footer.ejs') %>
+
+  
+</body>
+</html>
+  
