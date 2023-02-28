@@ -11,6 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/chrisgorham999/pets-r-us.git"
   },
+  "engines": {
+    "node": "16.19.0",
+    "npm": "8.19.3"
+  },
   "author": "Chris Gorham",
   "license": "MIT",
   "bugs": {
