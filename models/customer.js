@@ -4,7 +4,7 @@
 ; Author: Chris Gorham
 ; Date: 04 Feb 2023
 ; Description: This code establishes the Customer model and exports it
-; Sources Used: N/A
+; Sources Used: Not Applicable
 ;=====================================
 */
 

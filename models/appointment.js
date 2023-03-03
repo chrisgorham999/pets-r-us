@@ -4,7 +4,7 @@
 ; Author: Chris Gorham
 ; Date: 25 Feb 2023
 ; Description: This code establishes the Appointment model and exports it
-; Sources Used: N/A
+; Sources Used: Not Applicable
 ;=====================================
 */
 
